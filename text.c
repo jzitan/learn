@@ -1,23 +1,27 @@
 #include<stdio.h>
-int main()
-{
-    int n,m;
-    scanf("%d",&n);
-    for(int i = 0;i < n;i++ )
-    {
-        scanf("%d",&m);
-        for(int j = 0;j < m;j++)
-        {
-            for(int k = 0;k < j;k++)
-            {
-                printf(" ");
-            }
-            for(int k =0;k<2*m-1-2*j;k++)
-            {
-                printf("*");
-            }
-            printf("\n");
-        }
-    }
-    return 0;
+#include<math.h>
+int main(void){
+	int m,n,i,limit,x,s=0,y=0;
+	scanf("%d %d",&m,&n);
+	if(m<=n&&1<=m&&n<=500){
+	for(i=m;i<=n;i++){
+	limit=sqrt(i)+1;
+	if(m==2){
+		s++;
+		y=y+2;
+	}else{	
+		for(x=2;x<=limit;x++){
+			if(i%x==0){
+				break;
+			}
+		}
+		if(x>limit){
+		s++;
+		y=y+i;	
+		}
+	}
+}
+}
+	printf("%d %d",s,y);
+return 0;	
 }
