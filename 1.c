@@ -1,4 +1,4 @@
-// 保留a/b的c位小数并四舍五入
+// 保留a/b的c位小数并四舍五入，c<=1000
 #include <stdio.h>
 int main()
 {
