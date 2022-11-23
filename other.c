@@ -1,29 +1,29 @@
 #include <stdio.h>
-#include <stdlib.h>
-int main(void){
-int count[10000],i=1,n;
-char ch;
-ch=getchar();
-while(1){
-	if(ch!=' '){
-	while(ch!=' '){
-	count[i]++;
-    ch=getchar();
-    if(ch=='\n'){
-        goto out;
-        }
+#define MAXN 20
+
+void strmcpy( char *t, int m, char *s );
+void ReadString( char s[] ); /* 由裁判实现，略去不表 */
+
+int main()
+{
+    char t[MAXN], s[MAXN];
+    int m;
+    
+    scanf("%d\n", &m);
+    ReadString(t);
+    strmcpy( t, m, s );
+    printf("%s\n", s);
+
+    return 0;
+}
+
+/* 你的代码将被嵌在这里 */
+void strmcpy( char *t, int m, char *s )
+{
+    char *p,j=0;
+    p=t;
+    for(int i = m-1;i < MAXN;i++)
+    {
+        s[j++]=*(p+i);
     }
-i++;
-}
-ch=getchar();
-if(ch=='\n'){
-        break;
-        }
-}
-out:
-for(n=1;n<=i;n++){
-	printf("%d ",count[n]);
-}
-system("pause");
-	return 0;
 }
