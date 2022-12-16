@@ -1,27 +1,26 @@
 #include<stdio.h>
-#include<math.h>
-int main(void){
-	int m,n,i,limit,x,s=0,y=0;
-	scanf("%d %d",&m,&n);
-	if(m<=n&&1<=m&&n<=500){
-	for(i=m;i<=n;i++){
-	limit=sqrt(i)+1;
-	if(m==2){
-		s++;
-		y=y+2;
-	}else{	
-		for(x=2;x<=limit;x++){
-			if(i%x==0){
-				break;
-			}
-		}
-		if(x>limit){
-		s++;
-		y=y+i;	
-		}
+int c(int a);
+int main()
+{
+	int n,count=0;
+	int a[1025];
+	scanf("%d",&n);
+	for(int i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+		count = count +c(a[i]);
 	}
+	printf("%s",(count%2)?"Alice":"Bob");
+	system("pause");
+	return 0;
 }
-}
-	printf("%d %d",s,y);
-return 0;	
+int c( const int a)
+{
+	int count=0,b=a;
+	while (b%2==0)
+	{
+		count++;
+		b=b/2;
+	}
+	return count;
 }
